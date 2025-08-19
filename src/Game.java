@@ -6,7 +6,6 @@ public class Game {
         String randomWord = ChooseWord.chooseRandomWord();
         char[] charsWord = randomWord.toCharArray();
         String hiddenWord = "_".repeat(randomWord.length());
-        System.out.println(hiddenWord);
         while (hiddenWord.contains("_") & countErrors<6) {
             Gallow.GallowState(countErrors);
             System.out.println("Загаданное слово:" + hiddenWord);
@@ -23,12 +22,13 @@ public class Game {
                         hiddenWord = sb.toString();
                         if (!hiddenWord.contains("_")) {
                             System.out.println("Вы угадали слово!");
+                            System.out.println("Было слово - " + randomWord);
                         }
                     }
                 }
-                System.out.println(hiddenWord);
             } else {
                 countErrors = ErrorCounter.errorCount(countErrors);
+                Message.MistakeMessage();
                 if (countErrors>=6) {
                     GameOver.EndingGame(countErrors);
                     System.out.println("Было слово - " + randomWord);

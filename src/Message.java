@@ -23,4 +23,8 @@ public class Message {
         System.out.println("Есть такая буква!");
     }
 
+    static void MistakeMessage() {
+        System.out.println("Нет такой буквы! Введи другую букву");
+    }
+
 }
