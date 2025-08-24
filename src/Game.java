@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 public class Game {
     public static void main() throws FileNotFoundException {
         int countErrors = 0;
-        String randomWord = ChooseWord.chooseRandomWord();
+        String randomWord = WordGenerator.chooseRandomWord();
         char[] charsWord = randomWord.toCharArray();
         String hiddenWord = "_".repeat(randomWord.length());
         while (hiddenWord.contains("_") & countErrors<6) {
