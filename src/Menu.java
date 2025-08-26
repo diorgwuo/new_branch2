@@ -1,12 +1,11 @@
-import java.io.FileNotFoundException;
-
 public class Menu {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args){
         boolean start = true;
-        do {
-            StartGame.main();
-            start= RestartingGame.RestartGame();
-        } while (start);
+        while (start) {
+            GameAPI game = new GameAPI();
+            game.start();
+            start = game.restart();
+        }
     }
 }
 
