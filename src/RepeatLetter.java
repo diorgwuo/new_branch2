@@ -2,22 +2,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class StringInput {
+public class RepeatLetter {
 
-    static List<String> symbols = new ArrayList<>();
+    private List<String> symbols;
 
-    static String GetString() {
+    String getString() {
+        symbols = new ArrayList<>();
         String charString = new Scanner(System.in).nextLine(); //ввод буквы
         if (symbols.contains(charString)) {
             System.out.println("Ты уже вводил эту букву");
-            GetString();
+            getString();
         }
-
         symbols.add(charString);
         return charString;
     }
 
-    static void reset() {
-        symbols.clear();
+    void reset() {
+        if (symbols != null) {
+            symbols.clear();
+        }
     }
 }
